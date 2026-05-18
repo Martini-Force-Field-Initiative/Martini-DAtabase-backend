@@ -1,0 +1,169 @@
+import { Socket }from 'socket.io';
+import logger from '../../../../logger';
+import { inspect } from 'util';
+import { plainToInstance } from 'class-transformer';
+import { ClientInsaneSettingsDto, FileDto } from './dto';
+import { isInstance, validateOrReject } from 'class-validator';
+import { MembraneRunnerMolInputs, membraneBuilderRunner, InsaneMissingParameterError } from './core';
+/*
+class MembraneBuilderManager {
+
+}
+*/
+
+/*
+Original FileDto
+
+  FileDto {
+    fieldname: 'itp',
+    originalname: 'molecule_0.itp',
+    encoding: '7bit',
+    mimetype: 'application/octet-stream',
+    destination: '/data/prod/mad/uploads/',
+    filename: '95a202caa84510ab84f5082930ef84ba',
+    path: '/data/prod/mad/uploads/95a202caa84510ab84f5082930ef84ba',
+    size: 39901
+  }
+
+
+*/
+export interface InsaneSocketEvents {
+    submit: (pdb:Buffer, 
+             itp:Buffer[], 
+             top:Buffer, plainInsaneSettings:Record<string, any>)=> void
+    membraneBuilderSubmit: (data:any) => void
+} // NOT USED
+
+interface InsaneSettings {
+    pdb:FileDto, 
+    itps:FileDto[], 
+    top:FileDto,
+    parameters:ClientInsaneSettingsDto;
+}
+
+ // Improve this and impement as parameter decorator
+ 
+const processData = (data: any): InsaneSettings => {
+    const maybeParameters: { [k: string]: string | number } = {}
+    for (let k in data)
+        if (!["pdb", "itp", "top"].includes(k))
+            maybeParameters[k] = data[k]
+    logger.debug(`[SOCKET:MembraneBuilder] Validating following parameters:\n${inspect(maybeParameters)}`);
+
+    const parameters = plainToInstance(ClientInsaneSettingsDto, maybeParameters);
+    // RESUME HERE  
+    const validatedPdb = plainToInstance(FileDto, data.pdb)
+    logger.debug("[SOCKET:MembraneBuilder:processData] Validation: pdb ok ...");
+    const validatedTop = plainToInstance(FileDto, data.top)
+    logger.debug("[SOCKET:MembraneBuilder:processData] Validation: top ok ...");
+    const validatedItps = data.itps.map((itp:any) => plainToInstance(FileDto, itp));
+    logger.debug("[SOCKET:MembraneBuilder:processData] Validation: itp(s) ok ...");
+    logger.debug("[SOCKET:MembraneBuilder] Validation or Rejection");
+    logger.debug(validatedItps);
+   
+
+    return { parameters, pdb: validatedPdb, top: validatedTop, itps:validatedItps }
+}
+
+
+
+/*
+Must be adapted to Zero upload files case
+*/
+class MembraneBuilderSocketError extends Error {
+    constructor(public socketEvent:string, public message:string) {
+        super();   
+    }
+}
+
+export class MembraneBuilderSocketManager {
+
+    // Wrapping in class so that function oisting is correct for future decorator additions.
+    static socket: Socket;
+
+    static bind(socket: Socket) {
+        MembraneBuilderSocketManager.socket = socket;
+     
+        socket.on("membraneBuilderSubmit", MembraneBuilderSocketManager.InsaneInput);
+
+  
+        logger.debug("[MembraneBuilderSocketManager] Bound");
+    }
+
+    static wrapper (, ...args:any[])
+    static error(name:string, d:Record<string, string|number|boolean>) {
+        MembraneBuilderSocketManager.socket.emit(name, d); // some typings ?
+    }
+
+    //@processData
+    static async InsaneInput(data: any) {
+        logger.debug("[SOCKET:MembraneBuilder] Event:membraneBuilderSubmit");
+        logger.debug(inspect(data)); //<-- itp name somewhere ?
+        let inputs;
+
+        logger.debug("Running Socket TESTING ERROR BUBBLE");
+        throw new MembraneBuilderSocketError("dummy_error", "titi toto");
+/*
+        try {
+            const {parameters, pdb, top, itps} = processData(data);
+            logger.debug("[SOCKET:MembraneBuilder] Let's go");
+            await validateOrReject(parameters);
+            await validateOrReject(pdb); // seems trashy, consuming Buffer ?
+            await validateOrReject(top);
+            await Promise.all(itps.map((dto:any) => validateOrReject(dto)))
+            inputs = {parameters, pdb, top, itps};
+        } catch (e) {
+            logger.debug("[SOCKET:MembraneBuilder] emitin error on socket");
+            MembraneBuilderSocketManager.error("InsaneInputValidationError",
+                        { error: true, type: 'PARAMS_VALIDATION_ERROR', message:e instanceof(Error)? e.message :'' });
+            return;
+        }
+
+       
+        
+        MembraneBuilderSocketManager.insaneProcess(inputs);
+        */
+    }
+
+    static async insaneProcess({ pdb, top, itps, parameters }:InsaneSettings) {
+        logger.debug("Running Socket INSANE PLACEHOLDER");
+        
+        const molecule_inputs: MembraneRunnerMolInputs = {};
+        molecule_inputs.pdb = {
+            originalName: pdb.originalname,
+            //@ts-ignore
+            content: InputTextWrapper(validatedPdb.path)
+        }
+        molecule_inputs.top = {
+            originalName: top.originalname,
+            //@ts-ignore
+            content: InputTextWrapper(validatedTop.path)
+        }
+        molecule_inputs.itps = itps.map((itp) => {
+            return {
+                originalName: itp.originalname,
+                //@ts-ignore
+                content: InputTextWrapper(itp.path)
+            }});
+        
+
+        try {
+            const data = await membraneBuilderRunner(molecule_inputs, parameters);
+            logger.debug("[SOCKET:MembraneBuilder:insaneProcess] SUCCESSFULL");
+            //res.json(data);
+            
+          } catch(e){
+            if (e instanceof InsaneMissingParameterError) 
+                throw new MembraneBuilderSocketError("InsaneMissingParameterError", e.message);
+            else 
+                throw("TITIORO")
+          }
+    }
+}
+
+/*
+export async function SocketIoMembraneBuilder(socket: Socket) {
+    logger.debug("[ROUTE:SOCKET_IO::MEMBRANE BUILDER] Setting SocketIoMembraneBuilder ...");
+    socket.on("membraneBuilderSubmit", mbs);
+};
+*/

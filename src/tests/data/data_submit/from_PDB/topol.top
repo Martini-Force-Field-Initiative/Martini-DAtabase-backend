@@ -1,0 +1,8 @@
+#include "martini_v3.0.0.itp"
+#include "DAPA.itp"
+
+[ system ]
+DAPA
+
+[ molecules ]
+DAPA     1

@@ -1,0 +1,32 @@
+TY  - JOUR
+TI  - GōMartini 3: From large conformational changes in proteins to environmental bias corrections
+AU  - Souza, Paulo C. T.
+AU  - Borges-Araújo, Luís
+AU  - Brasnett, Christopher
+AU  - Moreira, Rodrigo A.
+AU  - Grünewald, Fabian
+AU  - Park, Peter
+AU  - Wang, Liguo
+AU  - Razmazma, Hafez
+AU  - Borges-Araújo, Ana C.
+AU  - Cofas-Vargas, Luis Fernando
+AU  - Monticelli, Luca
+AU  - Mera-Adasme, Raúl
+AU  - Melo, Manuel N.
+AU  - Wu, Sangwook
+AU  - Marrink, Siewert J.
+AU  - Poma, Adolfo B.
+AU  - Thallmair, Sebastian
+T2  - Nature Communications
+AB  - Coarse-grained modeling has become an important tool to supplement experimental measurements, allowing access to spatio-temporal scales beyond all-atom based approaches. The GōMartini model combines structure- and physics-based coarse-grained approaches, balancing computational efficiency and accurate representation of protein dynamics with the capabilities of studying proteins in different biological environments. This paper introduces an enhanced GōMartini model, which combines a virtual-site implementation of Gō models with Martini 3. The implementation has been extensively tested by the community since the release of the reparametrized version of Martini. This work demonstrates the capabilities of the model in diverse case studies, ranging from protein-membrane binding to protein-ligand interactions and AFM force profile calculations. The model is also versatile, as it can address recent inaccuracies reported in the Martini protein model. Lastly, the paper discusses the advantages, limitations, and future perspectives of the Martini 3 protein model and its combination with Gō models.
+DA  - 2025/04/30/
+PY  - 2025
+DO  - 10.1038/s41467-025-58719-0
+VL  - 16
+IS  - 1
+SP  - 4051
+J2  - Nature Communications
+SN  - 2041-1723
+UR  - https://doi.org/10.1038/s41467-025-58719-0
+ER  - 
+

@@ -1,0 +1,29 @@
+;;; VALINE
+; Category
+;   aminoacids
+;
+; Name
+;   VALINE
+;
+; Alias
+;   VAL
+;
+; Force field
+;   martini22p
+;
+; Version
+;   1.0
+;
+
+[moleculetype]
+; molname       nrexcl
+VAL                1
+
+[atoms]
+;id type resnr residu atom cgnr   charge
+1   P5   1     VAL     BB     1      0
+2   C2   1     VAL     SC1    2      0
+
+[constraints]
+;  i     j   funct   length
+1     2    1       0.265

@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   version="1.1"
+   id="svg3650"
+   viewBox="0 0 32 57"
+   height="57mm"
+   width="32mm">
+  <defs
+     id="defs3652">
+    <clipPath
+       id="59">
+      <rect
+         id="rect37"
+         height="768.33002"
+         width="1116.9301"
+         y="0.85000002"
+         x="0.85000002" />
+    </clipPath>
+  </defs>
+  <metadata
+     id="metadata3655">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     transform="translate(-44.271792,-96.318918)"
+     id="layer1">
+    <g
+       clip-path="url(#59)"
+       id="page"
+       transform="matrix(0.26458334,0,0,0.26458334,-5.0293707,82.272942)">
+      <g
+         id="Solid">
+        <path
+           id="path44"
+           d="m 191.67,93.74 0,0 -0.42,-0.74 -0.42,-0.74 34.79,-20.08 0,0.98 0,0.98 z"
+           style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0;stroke-linejoin:miter;shape-rendering:geometricPrecision" />
+      </g>
+      <g
+         id="g46">
+        <path
+           id="path48"
+           d="m 225.62,74.14 0,0 0,-0.98 0,-0.98 34.37,19.84 0,0.98 -0.85,0.49 z"
+           style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0;stroke-linejoin:miter;shape-rendering:geometricPrecision" />
+      </g>
+      <g
+         id="g50">
+        <path
+           id="path52"
+           d="m 260.84,93.49 0,0 -0.85,-0.49 0,-0.98 33.93,-19.6 0.43,0.74 0.43,0.74 z"
+           style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0;stroke-linejoin:miter;shape-rendering:geometricPrecision" />
+      </g>
+      <g
+         id="g54">
+        <path
+           id="path56"
+           d="m 259.14,93.49 0,0 0.85,-0.49 0.85,0.49 0,38.71 -0.85,0.49 -0.85,-0.49 z"
+           style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0;stroke-linejoin:miter;shape-rendering:geometricPrecision" />
+      </g>
+      <g
+         id="g58">
+        <path
+           id="path60"
+           d="m 259.14,132.2 0,0 0.85,0.49 0,0.98 -33.52,19.35 -0.85,-0.49 -0.85,-0.49 z"
+           style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0;stroke-linejoin:miter;shape-rendering:geometricPrecision" />
+        <line
+           id="line62"
+           y2="155.97"
+           x2="231.57001"
+           y1="139.56"
+           x1="259.98999"
+           style="stroke:#000000;stroke-width:1.70000005;shape-rendering:auto" />
+      </g>
+      <g
+         id="g64">
+        <path
+           id="path66"
+           d="m 224.77,152.04 0,0 0.85,0.49 0.85,0.49 0,38.7 -0.85,0.49 -0.85,0.49 z"
+           style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0;stroke-linejoin:miter;shape-rendering:geometricPrecision" />
+      </g>
+      <g
+         id="g68">
+        <path
+           id="path70"
+           d="m 224.77,192.7 0,0 0.85,-0.49 0.85,-0.49 33.52,19.36 0,0.98 -0.85,0.49 z"
+           style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0;stroke-linejoin:miter;shape-rendering:geometricPrecision" />
+        <line
+           id="line72"
+           y2="205.17999"
+           x2="259.98999"
+           y1="188.77"
+           x1="231.57001"
+           style="stroke:#000000;stroke-width:1.70000005;shape-rendering:auto" />
+      </g>
+      <g
+         id="g74">
+        <path
+           id="path76"
+           d="m 260.84,212.55 0,0 -0.85,-0.49 0,-0.98 33.51,-19.36 0.85,0.49 0.85,0.49 z"
+           style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0;stroke-linejoin:miter;shape-rendering:geometricPrecision" />
+      </g>
+      <g
+         id="g78">
+        <path
+           id="path80"
+           d="m 295.2,192.7 0,0 -0.85,-0.49 -0.85,-0.49 0,-38.7 0.85,-0.49 0.85,-0.49 z"
+           style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0;stroke-linejoin:miter;shape-rendering:geometricPrecision" />
+        <line
+           id="line82"
+           y2="155.97"
+           x2="288.39999"
+           y1="188.77"
+           x1="288.39999"
+           style="stroke:#000000;stroke-width:1.70000005;shape-rendering:auto" />
+      </g>
+      <g
+         id="g84">
+        <path
+           id="path86"
+           d="m 295.2,152.04 0,0 -0.85,0.49 -0.85,0.49 -33.51,-19.35 0,-0.98 0.85,-0.49 z"
+           style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0;stroke-linejoin:miter;shape-rendering:geometricPrecision" />
+      </g>
+      <g
+         id="g88">
+        <text
+           id="text90"
+           xml:space="preserve"
+           style="text-anchor:start;text-rendering:geometricPrecision"><tspan
+             id="tspan92"
+             font-size="24"
+             y="261.19"
+             x="251.99001"
+             style="font-size:24px;font-family:Arial;fill:#000000">SO</tspan><tspan
+             id="tspan94"
+             font-size="18"
+             dy="5.4299998"
+             style="font-size:18px;font-family:Arial;fill:#000000">3</tspan><tspan
+             id="tspan96"
+             font-size="18"
+             dy="-15.21"
+             style="font-size:18px;font-family:Arial;fill:#000000">-</tspan></text>
+      </g>
+      <g
+         id="g98">
+        <path
+           id="path100"
+           d="m 259.14,212.55 0,0 0.85,-0.49 0.85,0.49 0,28.98 -0.85,0 -0.85,0 z"
+           style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0;stroke-linejoin:miter;shape-rendering:geometricPrecision" />
+      </g>
+    </g>
+    <g
+       transform="matrix(0.19941754,0,0,0.19941754,-5.6477067,93.336713)"
+       id="g3598">
+      <path
+         id="polyline52"
+         d="m 287.90926,19.613626 -5.37528,0 0,67.065939 5.37528,0"
+         style="fill:none;stroke:#000000;stroke-width:2.2622242" />
+      <path
+         id="polyline54"
+         d="m 371.25121,19.613626 5.37528,0 0,67.065939 -5.37528,0"
+         style="fill:none;stroke:#000000;stroke-width:2.2622242" />
+      <g
+         id="text56"
+         style="font-size:30px;font-family:Arial;fill:#000000"
+         transform="matrix(1.0009842,0,0,1.0009842,123.37749,-102.50644)">
+        <path
+           id="path3057"
+           style="font-style:italic"
+           d="m 256.99609,195.25 3.25196,-15.55664 2.40234,0 -0.57129,2.70996 c 1.04492,-1.06444 2.02148,-1.84081 2.92969,-2.3291 0.90819,-0.48827 1.83593,-0.73241 2.7832,-0.73242 1.25975,1e-5 2.24852,0.34181 2.96631,1.02539 0.71776,0.68361 1.07665,1.59669 1.07666,2.73926 -1e-5,0.57618 -0.12697,1.48438 -0.38086,2.7246 l -1.97754,9.41895 -2.65136,0 2.06542,-9.8584 c 0.20507,-0.95702 0.30761,-1.66503 0.30762,-2.12402 -10e-6,-0.51757 -0.17823,-0.93749 -0.53467,-1.25977 -0.35645,-0.32225 -0.87159,-0.48338 -1.54541,-0.4834 -1.35743,2e-5 -2.56592,0.4883 -3.62548,1.46485 -1.05958,0.97657 -1.83839,2.65137 -2.33643,5.02441 l -1.50879,7.23633 z" />
+      </g>
+    </g>
+  </g>
+</svg>

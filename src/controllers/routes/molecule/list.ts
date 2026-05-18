@@ -1,0 +1,211 @@
+import { Router } from 'express';
+import { errorCatcher, sanitize, methodNotAllowed, escapeRegExp, withRegex } from '../../../helpers/simple';
+import { Database } from '../../../Entities/CouchHelper';
+import nano = require('nano');
+import { User } from '../../../Entities/entities';
+import SearchWorker from '../../../search_worker';
+import { MAINTENANCE } from '../../../constants';
+import logger  from '../../../logger';
+import { inspect } from 'util';
+import SettingsWrapper from '../../../helpers/settingsManager';
+import DatabaseMoleculeDesk from '../../../helpers/database/molecule'
+//response.molecules = response.molecules.map(e => sanitize(e)).map(DatabaseMoleculeDesk.niceView)
+const ListMoleculeRouter = Router();
+
+interface Filters {
+  /* Filters */
+  version?: string;
+  force_fields?: string;
+  q: string;
+  author: string;
+  categories?: string;
+  create_ways?: string;
+  name?: string;
+  alias?: string;
+  owner?: string;
+
+  /* Search modificators */
+  is_regex?: string;
+  combine?: "0" | "false" | "1" | "true";
+  skip?: string;
+  limit?: string;
+  from_stashed?: "true" | "false"
+
+}
+
+ListMoleculeRouter.get('/', (req, res) => {
+  (async () => {
+   
+    logger.debug("[ListMoleculeRouter] incoming request w/ query: " + inspect(req.query))
+
+    const settings = await SettingsWrapper.getSettingsWrapper();
+
+    if(MAINTENANCE.mode) {
+      res.json({'maintenance': true})
+    } else {
+      const query: nano.MangoQuery = { selector: {}, limit: 25, skip: 0 };
+
+    const { 
+      force_fields, 
+      version, 
+      q: free_text, 
+      author, 
+      owner,
+      categories, 
+      is_regex,
+      create_ways,
+      name: molecule_name,
+      alias,
+      combine: __as_version_tree__,
+      skip,
+      limit,
+      from_stashed
+    } = req.query as Partial<Filters>;
+
+    logger.debug(`from_stashed : ${ from_stashed ? 'true' : 'false'}`);
+    const with_regex = is_regex === "true" || is_regex === "1";
+    const bulk_request = __as_version_tree__ === "false" || __as_version_tree__ === "0";
+    const search_in_stashed =  from_stashed === "true"
+
+    const selectors: any[] = [];
+    if (force_fields) {
+      const ff = force_fields.split(',');
+      selectors.push({
+        force_field: {
+          $in: ff
+        }
+      });
+    }
+    if (create_ways) {
+      const vers = create_ways.split(',');
+
+      selectors.push({
+        create_way: {
+          $in: vers
+        }
+      });
+    }
+    if (version) {
+      selectors.push({
+        version: withRegex(version, with_regex)
+      });
+    }
+    if (molecule_name) {
+      selectors.push({
+        name: withRegex(molecule_name, with_regex)
+      });
+    }
+    if (alias) {
+      selectors.push({
+        $or : [ 
+          {alias : withRegex(alias, with_regex)},
+          {alternative_alias : {
+            $elemMatch : withRegex(alias, with_regex)
+          }}
+        ]
+      })
+      // selectors.push({
+      //   alias: withRegex(alias, with_regex)
+      // });
+      // selectors.push({
+      //   alternative_alias : {
+      //     $elemMatch : {
+      //       $eq : withRegex(alias, with_regex)
+      //     }
+      //   }
+      // })
+    }
+    if (author) {
+      const users_that_match_query = await Database.user.find({
+        limit: 99999,
+        selector: {
+          $or: [
+            // @ts-ignore
+            { email: withRegex(author, with_regex) },
+            { name: withRegex(author, with_regex) },
+          ]
+        }
+      }) as User[];
+
+      const users_id = users_that_match_query.map(u => u.id);
+
+      selectors.push({
+        owner: { $in: users_id }
+      });
+    }
+    if (owner) {
+      selectors.push({
+        owner
+      });
+    }
+    if (categories) {
+      const cat = categories.split(',')
+        .map((c, i) => {
+          try { 
+          return settings.reverse_category(c);
+        } catch(e) {
+          console.log(e);
+          return c;
+        }
+      });
+
+      selectors.push({
+        category: {
+          $in: cat
+        }
+      });
+    }
+    if (free_text) {
+      const search_text = with_regex ? author : escapeRegExp(free_text);
+      const search_obj = {
+        $regex: '(?i)' + search_text
+      };
+
+      selectors.push({
+        $or: [
+          { category: search_obj },
+          { comments: search_obj },
+          { name: search_obj },
+          { alias: search_obj },
+          { command_line: search_obj },
+          { force_field: search_obj },
+          { alternative_alias : {$elemMatch : search_obj}}
+        ]
+      });
+    }
+    
+    if (selectors.length) {
+      query.selector = { $and: selectors };
+    }
+
+    if (skip) {
+      if (Number(skip) > 0) {
+        query.skip = Number(skip);
+      }
+    }
+    if (limit) {
+      const l = Number(limit);
+
+      if (l > 0 && l <= 999) {
+        query.limit = l;
+      }
+    }
+    logger.debug("Buildup Query::" + inspect(query, {depth: 5}));
+    const response = await SearchWorker.query(query, bulk_request, search_in_stashed);
+    logger.debug("RESP::" + inspect(response));
+    response.molecules = await Promise.all( response.molecules.map(e => sanitize(e)).map(DatabaseMoleculeDesk.niceView) );
+
+    logger.debug(`[routes:molecule:list]Sending\n${inspect(response.molecules)}`);
+
+    res.json(response);
+    }
+    
+  })().catch((e)=>{
+    logger.error(`[routes:molecule:list]Smthg went wrong ${e}`);
+    errorCatcher(res);
+  });
+});
+
+ListMoleculeRouter.all('/', methodNotAllowed('GET'))
+
+export default ListMoleculeRouter;

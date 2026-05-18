@@ -1,0 +1,100 @@
+/*
+import logger from '../../../../logger';
+import { inspect } from 'util';
+import { plainToInstance } from 'class-transformer';
+import { ClientInsaneSettingsDto, FileDto } from './dto';
+import { isInstance, validateOrReject } from 'class-validator';
+import { MembraneRunnerMolInputs, membraneBuilderRunner, InsaneMissingParameterError, InsaneError } from '../../../common/membraneBuilder';
+import { SocketController, ListenTo, Socket } from 'socket-controller-rdy';
+
+
+// This should be provided as a parameter decorator 4 validation
+const processData = (data: any): InsaneSettings => {
+    const maybeParameters: { [k: string]: string | number } = {}
+    for (let k in data)
+        if (!["pdb", "itp", "top"].includes(k))
+            maybeParameters[k] = data[k]
+    logger.debug(`[SOCKET:MembraneBuilder] Validating following parameters:\n${inspect(maybeParameters)}`);
+
+    const parameters = plainToInstance(ClientInsaneSettingsDto, maybeParameters);
+    // RESUME HERE  
+    const validatedPdb = plainToInstance(FileDto, data.pdb)
+    logger.debug("[SOCKET:MembraneBuilder:processData] Validation: pdb ok ...");
+    const validatedTop = plainToInstance(FileDto, data.top)
+    logger.debug("[SOCKET:MembraneBuilder:processData] Validation: top ok ...");
+    const validatedItps = data.itps.map((itp:any) => plainToInstance(FileDto, itp));
+    logger.debug("[SOCKET:MembraneBuilder:processData] Validation: itp(s) ok ...");
+    logger.debug("[SOCKET:MembraneBuilder] Validation or Rejection");
+    logger.debug(validatedItps);
+   
+
+    return { parameters, pdb: validatedPdb, top: validatedTop, itps:validatedItps }
+}
+
+
+export class MembraneBuilder extends SocketController{
+    @ListenTo
+    async insaneSubmit(data:any){
+        logger.debug("[SOCKET:MembraneBuilder] insaneSubmit");
+        const { pdb, top, itps, parameters }:InsaneSettings = processData(data);
+        const molecule_inputs: MembraneRunnerMolInputs = {};
+        molecule_inputs.pdb = {
+            originalName: pdb.originalname,
+            //@ts-ignore
+            content: InputTextWrapper(param.pdb.path)
+        }
+        molecule_inputs.top = {
+            originalName: top.originalname,
+            //@ts-ignore
+            content: InputTextWrapper(param.top.path)
+        }
+        molecule_inputs.itps = itps.map((itp) => {
+            return {
+                originalName: itp.originalname,
+                //@ts-ignore
+                content: InputTextWrapper(itp.path)
+            }});
+        try {
+            const data = await membraneBuilderRunner(molecule_inputs, parameters);
+            logger.debug("[SOCKET:MembraneBuilder:insaneProcess] SUCCESSFULL");
+            return data;
+
+        } catch (e:any) {
+            if (e instanceof InsaneMissingParameterError) {
+                logger.debug(`[MembraneBuilder:insaneSubmit] InsaneMissingParameterError ${e}`);
+                throw new MissingParameters("InsaneMissingParameterError");
+            }
+            if (e instanceof InsaneError) {
+                logger.debug(`[MembraneBuilder:insaneSubmit] InsaneError ${e}`);
+                throw(e)
+             }
+            logger.error(`[MembraneBuilder:insaneSubmit] FATAL unknwon Error: ${e}`)
+            throw new InsaneRunError(e.message);
+        }
+    }
+
+}
+
+export interface InsaneSocketEvents {
+    submit: (pdb:Buffer, 
+             itp:Buffer[], 
+             top:Buffer, plainInsaneSettings:Record<string, any>)=> void
+    membraneBuilderSubmit: (data:any) => void
+} // NOT USED
+
+interface InsaneSettings {
+    pdb:FileDto, 
+    itps:FileDto[], 
+    top:FileDto,
+    parameters:ClientInsaneSettingsDto;
+}
+
+class MissingParameters extends Error {}
+class InsaneRunError extends Error {}
+
+
+*/
+/*
+Must be adapted to Zero upload files case
+*/
+

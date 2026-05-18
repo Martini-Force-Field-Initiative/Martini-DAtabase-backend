@@ -1,0 +1,170 @@
+{
+  "vermouth_library": [
+    {
+      "name": "martini3_IDP",
+      "files": ["Martini3-IDP_Poplyply.ff"],
+      "target_polyply_lib": "martini3",
+      "metadata": {
+        "comments": "Martini3-IDP: improved Martini 3 force field for disordered proteins",
+        "cite": "https://www.nature.com/articles/s41467-025-58199-2"
+      }
+    }
+  ],
+  "forcefield_by_ascend_version": [
+    {
+      "name": "martini21",
+      "info": {
+        "polyply_lib_support": "martini2",
+        "polarizable": false,
+        "martinize2_support": false,
+        "downloadable": false
+      },
+      "files": ["martini_v2.1-dna.itp"]
+    },
+    {
+      "name": "core_martini22",
+      "files": ["martini_v2.2.itp"],
+      "info": {
+        "virtual": true
+      }
+    },
+    {
+      "name": "elnedyn",
+      "info": {
+        "polarizable": false,
+        "martinize2_support": true,
+        "downloadable": false
+      },
+      "files": ["martini_v2.0_ions.itp", "martini_v2.0_solvents.itp"],
+      "refers_to": "core_martini22"
+    },
+
+    {
+      "name": "elnedyn22",
+      "refers_to": "elnedyn"
+    },
+    {
+      "name": "elnedyn22p",
+      "info": {
+        "polarizable": true,
+        "martinize2_support": true,
+        "downloadable": false
+      },
+      "files": [
+        "martini_v2.2P.itp",
+        "martini_v2.0_ions.itp",
+        "martini_v2.0_solvents.itp"
+      ]
+    },
+    {
+      "name": "martini23_CNP",
+      "info": {
+        "polarizable": false,
+        "downloadable": true
+      },
+      "files": ["martini_v2.3_CNP.itp"]
+    },
+    {
+      "name": "martini22",
+      "info": {
+        "polarizable": false,
+        "downloadable": true,
+        "insane_support": true,
+        "martinize2_support": true
+      },
+      "files": ["martini_v2.0_ions.itp", "martini_v2.0_solvents.itp"],
+      "refers_to": "core_martini22",
+      "insane_def": "martini_nonNLT_insane_def.json"
+    },
+
+    {
+      "name": "core_martini22p",
+      "files": ["martini_v2.2P.itp"],
+      "info": {
+        "virtual": true
+      }
+    },
+    {
+      "name": "martini22p",
+      "info": {
+        "polarizable": true,
+        "downloadable": true,
+        "martinize2_support": true
+      },
+      "files": ["martini_v2.0_ions.itp", "martini_v2.0_solvents.itp"],
+      "refers_to": "core_martini22p"
+    },
+
+    {
+      "name": "core_martini3001",
+      "files": ["martini_v3.0.0.itp"],
+      "info": {
+        "virtual": true
+      }
+    },
+    {
+      "name": "martini3001",
+      "info": {
+        "polarizable": false,
+        "insane_support": true,
+        "martinize2_support": true,
+        "polyply_lib_support": "martini3",
+        "downloadable": true,
+        "metadata": {
+          "comments": "Martini 3: a general purpose force field for coarse-grained molecular dynamics",
+          "cite": "https://www.nature.com/articles/s41592-021-01098-3"
+        }
+      },
+      "files": ["martini_v3.0.0_ions_v1.itp", "martini_v3.0.0_solvents_v1.itp"],
+      "refers_to": "core_martini3001",
+      "insane_def": "martini_nonNLT_insane_def.json"
+    },
+    {
+      "name": "martini3 lipidome",
+
+      "info": {
+        "polyply_lib_support": "martini3",
+        "polarizable": false,
+        "insane_support": true,
+        "downloadable": true,
+        "metadata": {
+          "comments": "Expanded and Refined Parameters Improve Lipid Phase Behavior for the Martini3 forcefield",
+          "cite": "https://chemrxiv.org/engage/chemrxiv/article-details/67652de681d2151a02594f8d"
+        }
+      },
+      "files": [
+        "martini_v3.0.0_ffbonded_v2_openbeta.itp",
+        "martini_v3.0.0_ions_v1.itp",
+        "martini_v3.0.0_solvents_v1.itp"
+      ],
+      "refers_to": "core_martini3001",
+      "insane_def": "martini3_NLT_insane_update_transformed.json"
+    },
+    {
+      "name": "poliplyMinimizer_martini3",
+      "info": {
+        "insane_support": false,
+        "polarizable": false,
+        "martinize2_support": false,
+        "downloadable": false
+      },
+      "refers_to": "martini3 lipidome"
+    },
+    {
+      "name": "martini3IDP",
+      "info": {
+        "downloadable": false,
+        "metadata": {
+          "comments": "Martini3-IDP: improved Martini 3 force field for disordered proteins",
+          "cite": "https://www.nature.com/articles/s41467-025-58199-2"
+        }
+      },
+      "refers_to": "martini3001"
+    }
+  ],
+
+  "martinize2sytemBuilder_compatibiliy_matrix": [
+    { "from": "martini3001", "to": ["martini3 lipidome"] },
+    { "from": "martini3IDP", "to": ["martini3 lipidome"] }
+  ]
+}

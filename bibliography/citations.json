@@ -1,0 +1,213 @@
+{
+  "references": [
+    {
+      "section": "Preamble",
+      "alias": "MAD Original",
+      "as_ris": "MAD_2023.ris",
+      "as_bib": "MAD_2023.bib",
+      "content": {
+        "type": "article",
+        "title": "Facilitating {CG} {Simulations} with {MAD}: {The} {MArtini} {Database} {Server}}",
+        "url": "{https://doi.org/10.1021/acs.jcim.2c01375}",
+        "doi": "{10.1021/acs.jcim.2c01375}",
+        "journal": "{Journal of Chemical Information and Modeling}",
+        "author": "{Hilpert, Cécile and Beranger, Louis and Souza, Paulo C. T. and Vainikka, Petteri A. and Nieto, Vincent and Marrink, Siewert J. and Monticelli, Luca and Launay, Guillaume}",
+        "month": "feb",
+        "year": "{2023}",
+        "pages": "{702--710}"
+      }
+    },
+    {
+      "section": "Preamble",
+      "alias": "MAD Latest",
+      "as_ris": "MAD.ris",
+      "as_bib": "MAD.bib",
+      "content": {
+        "type": "article",
+        "title": "{Extending the {MAD} {Toolbox}: {New} {Polymer} {Builder} and {Enhanced} {Martini} {Database}}",
+        "url": "{http://biorxiv.org/content/early/2026/01/26/2026.01.23.700524.abstract}",
+        "doi": "{10.64898/2026.01.23.700524}",
+        "abstract": "{The MArtini Database (MAD) web server (https://mad.ens-lyon.fr/) has been updated with new tools, models, and capabilities to support a broader range of molecular systems for the Martini coarse-grained (CG) force field. The most notable addition is the MAD:Polymer Builder, enabling the automated construction of CG polymer models with varying architectures and complexities. The server now incorporates the latest developments in Martini 3, providing enhanced control within the MAD:Molecule Builder over the conversion of all-atom structures into CG representations, including the implementation of GōMartini 3 for protein complexes and water–protein interaction biases. The MAD:Polymer Builder and MAD:Molecule Builder are both adapted to work with intrinsically disordered proteins and domains. Substantial progress has been made in expanding the MAD:Database, making a growing library of Martini-ready compounds readily accessible across the entire MAD ecosystem. These advances position MAD as a comprehensive and evolving platform for the preparation of diverse systems in CG molecular simulations.Competing Interest StatementThe authors have declared no competing interest.}",
+        "journal": "{bioRxiv}",
+        "author": "{Marin, Romuald and Hilpert, Cécile and Grünewald, Fabian and Valério, Mariana and Borges-Araúj, Luís and Janczarski, Stéphane and Rossini, Nicolas O. and Marrink, Siewert J. and Souza, Paulo C. T. and Launay, Guillaume}",
+        "month": "jan",
+        "year": "{2026}",
+        "pages": "{2026.01.23.700524}"
+      }
+    },
+    {
+      "section": "Tools",
+      "alias": "Molecule Builder",
+      "as_ris": "martinize.ris",
+      "as_bib": "martinize.bib",
+      "content": {
+        "type": "article",
+        "title": "{Martinize2 and {Vermouth} provide a unified framework for molecular topology generation}",
+        "volume": "{12}",
+        "issn": "{2050-084X}",
+        "url": "{https://doi.org/10.7554/eLife.90627}",
+        "doi": "{10.7554/eLife.90627}",
+        "abstract": "{Ongoing advances in force field and computer hardware development enable the use of molecular dynamics (MD) to simulate increasingly complex systems with the ultimate goal of reaching cellular complexity. At the same time, rational design by high-throughput (HT) simulations is another forefront of MD. In these areas, the Martini coarse-grained force field, especially the latest version (i.e. v3), is being actively explored because it offers an enhanced spatial-temporal resolution. However, the automation tools for preparing simulations with the Martini force field, accompanying the previous version, were not designed for HT simulations or studies of complex cellular systems. Therefore, they become a major limiting factor. To address these shortcomings, we present the open-source Vermouth python library. Vermouth is designed to become the unified framework for developing programs, which prepare, run, and analyze Martini simulations of complex systems. To demonstrate the power of the Vermouth library, the Martinize2 program is showcased as a generalization of the martinize script, originally aimed to set up simulations of proteins. In contrast to the previous version, Martinize2 automatically handles protonation states in proteins and post-translation modifications, offers more options to fine-tune structural biases such as the elastic network (EN), and can convert non-protein molecules such as ligands. Finally, Martinize2 is used in two high-complexity benchmarks. The entire I-TASSER protein template database as well as a subset of 200,000 structures from the AlphaFold Protein Structure Database are converted to CG resolution and we illustrate how the checks on input structure quality can safeguard HT applications.}",
+        "journal": "{eLife}",
+        "author": "{Kroon, Peter C and Grünewald, Fabian and Barnoud, Jonathan and van Tilburg, Marco and Brasnett, Chris and Souza, Paulo CT and Wassenaar, Tsjerk A and Marrink, Siewert J}",
+        "editor": "{Cui, Qiang}",
+        "month": "nov",
+        "year": "{2025}",
+        "note": "{Publisher: eLife Sciences Publications, Ltd}",
+        "keywords": "{coarse-graining, Martini, molecular dynamics}",
+        "pages": "{RP90627}"
+      }
+    },
+    {
+      "section": "Tools",
+      "alias": "Polymer Generator",
+      "as_ris": "polyply.ris",
+      "as_bib": "polyply.bib",
+      "content": {
+        "type": "article",
+        "title": "{Polyply; a python suite for facilitating simulations of macromolecules and nanomaterials}",
+        "volume": "{13}",
+        "issn": "{2041-1723}",
+        "url": "{https://doi.org/10.1038/s41467-021-27627-4}",
+        "doi": "{10.1038/s41467-021-27627-4}",
+        "abstract": "{Molecular dynamics simulations play an increasingly important role in the rational design of (nano)-materials and in the study of biomacromolecules. However, generating input files and realistic starting coordinates for these simulations is a major bottleneck, especially for high throughput protocols and for complex multi-component systems. To eliminate this bottleneck, we present the polyply software suite that provides 1) a multi-scale graph matching algorithm designed to generate parameters quickly and for arbitrarily complex polymeric topologies, and 2) a generic multi-scale random walk protocol capable of setting up complex systems efficiently and independent of the target force-field or model resolution. We benchmark quality and performance of the approach by creating realistic coordinates for polymer melt simulations, single-stranded as well as circular single-stranded DNA. We further demonstrate the power of our approach by setting up a microphase-separated block copolymer system, and by generating a liquid-liquid phase separated system inside a lipid vesicle.}",
+        "number": "{1}",
+        "journal": "{Nature Communications}",
+        "author": "{Grünewald, Fabian and Alessandri, Riccardo and Kroon, Peter C. and Monticelli, Luca and Souza, Paulo C. T. and Marrink, Siewert J.}",
+        "month": "jan",
+        "year": "{2022}",
+        "pages": "{68}"
+      }
+    },
+    {
+      "section": "Tools",
+      "alias": "System Builder",
+      "as_ris": "insane.ris",
+      "as_bib": "insane.bib",
+      "content": {
+        "type": "article",
+        "title": "{Computational {Lipidomics} with insane: {A} {Versatile} {Tool} for {Generating} {Custom} {Membranes} for {Molecular} {Simulations}}",
+        "volume": "{11}",
+        "issn": "{1549-9618}",
+        "url": "{https://doi.org/10.1021/acs.jctc.5b00209}",
+        "doi": "{10.1021/acs.jctc.5b00209}",
+        "number": "{5}",
+        "journal": "{Journal of Chemical Theory and Computation}",
+        "author": "{Wassenaar, Tsjerk A. and Ingólfsson, Helgi I. and Böckmann, Rainer A. and Tieleman, D. Peter and Marrink, Siewert J.}",
+        "month": "may",
+        "year": "{2015}",
+        "note": "{Publisher: American Chemical Society}",
+        "pages": "{2144--2155}",
+        "annote": "{doi: 10.1021/acs.jctc.5b00209}"
+      }
+    },
+    {
+      "section": "Optional protein features",
+      "alias": "Go model",
+      "as_ris": "M3_go.ris",
+      "as_bib": "M3_go.bib",
+      "content": {
+        "type": "article",
+        "title": "{G{ōMartini} 3: {From} large conformational changes in proteins to environmental bias corrections}",
+        "volume": "{16}",
+        "issn": "{2041-1723}",
+        "url": "{https://doi.org/10.1038/s41467-025-58719-0}",
+        "doi": "{10.1038/s41467-025-58719-0}",
+        "abstract": "{Coarse-grained modeling has become an important tool to supplement experimental measurements, allowing access to spatio-temporal scales beyond all-atom based approaches. The GōMartini model combines structure- and physics-based coarse-grained approaches, balancing computational efficiency and accurate representation of protein dynamics with the capabilities of studying proteins in different biological environments. This paper introduces an enhanced GōMartini model, which combines a virtual-site implementation of Gō models with Martini 3. The implementation has been extensively tested by the community since the release of the reparametrized version of Martini. This work demonstrates the capabilities of the model in diverse case studies, ranging from protein-membrane binding to protein-ligand interactions and AFM force profile calculations. The model is also versatile, as it can address recent inaccuracies reported in the Martini protein model. Lastly, the paper discusses the advantages, limitations, and future perspectives of the Martini 3 protein model and its combination with Gō models.}",
+        "number": "{1}",
+        "journal": "{Nature Communications}",
+        "author": "{Souza, Paulo C. T. and Borges-Araújo, Luís and Brasnett, Christopher and Moreira, Rodrigo A. and Grünewald, Fabian and Park, Peter and Wang, Liguo and Razmazma, Hafez and Borges-Araújo, Ana C. and Cofas-Vargas, Luis Fernando and Monticelli, Luca and Mera-Adasme, Raúl and Melo, Manuel N. and Wu, Sangwook and Marrink, Siewert J. and Poma, Adolfo B. and Thallmair, Sebastian}",
+        "month": "apr",
+        "year": "{2025}",
+        "pages": "{4051}"
+      }
+    },
+    {
+      "section": "Force Field Extension",
+      "alias": "Martini3 Lipidome",
+      "as_bib": "M3_lipidome.bib",
+      "as_ris": "M3_lipidome.ris",
+      "content": {
+        "type": "article",
+        "title": "{The {Martini} 3 {Lipidome}: {Expanded} and {Refined} {Parameters} {Improve} {Lipid} {Phase} {Behavior}}",
+        "volume": "{11}",
+        "issn": "{2374-7943}",
+        "url": "{https://doi.org/10.1021/acscentsci.5c00755}",
+        "doi": "{10.1021/acscentsci.5c00755}",
+        "number": "{9}",
+        "journal": "{ACS Central Science}",
+        "author": "{Pedersen, Kasper B. and Ingólfsson, Helgi I. and Ramirez-Echemendia, Daniel P. and Borges-Araújo, Luís and Andreasen, Mikkel D. and Empereur-mot, Charly and Melcr, Josef and Ozturk, Tugba N. and Bennett, W. F. Drew and Kjølbye, Lisbeth R. and Brasnett, Christopher and Corradi, Valentina and Khan, Hanif M. and Cino, Elio A. and Crowley, Jackson and Kim, Hyuntae and Fábián, Balázs and Borges-Araújo, Ana C. and Pavan, Giovanni M. and Launay, Guillaume and Lolicato, Fabio and Wassenaar, Tsjerk A. and Melo, Manuel N. and Thallmair, Sebastian and Carpenter, Timothy S. and Monticelli, Luca and Tieleman, D. Peter and Schiøtt, Birgit and Souza, Paulo C. T. and Marrink, Siewert J.}",
+        "month": "sep",
+        "year": "{2025}",
+        "note": "{Publisher: American Chemical Society}",
+        "pages": "{1598--1610}",
+        "annote": "{doi: 10.1021/acscentsci.5c00755}"
+      }
+    },
+    {
+      "section": "Force Field Extension",
+      "alias": "Martini3-IDP",
+      "as_bib": "M3_IDP.bib",
+      "as_ris": "M3_IDP.ris",
+      "content": {
+        "type": "article",
+        "title": "{Martini3-{IDP}: improved {Martini} 3 force field for disordered proteins}",
+        "volume": "{16}",
+        "issn": "{2041-1723}",
+        "url": "{https://doi.org/10.1038/s41467-025-58199-2}",
+        "doi": "{10.1038/s41467-025-58199-2}",
+        "abstract": "{Coarse-grained (CG) molecular dynamics (MD) is widely used for the efficient simulation of intrinsically disordered proteins (IDPs). The Martini model, one of the most popular CG force fields in biomolecular simulation, was reported to yield too compact IDP conformations, limiting its applications. Addressing this, we optimized the bonded parameters based on fitting to reference simulations of a diverse set of IDPs at atomistic resolution, resulting in a Martini3-based disordered protein model coined Martini3-IDP. This model leads to expanded IDP conformations, greatly improving the reproduction of the experimentally measured radii of gyration. Moreover, contrary to ad-hoc fixes based on scaling of protein-protein or protein-water interactions, Martini3-IDP keeps the overall interaction balance underlying Martini 3. To validate that, we perform a comprehensive testing including full-length multidomain proteins, IDP-lipid membrane binding and IDP-small molecule binding, confirming its ability to successfully capture the complex interplay between disordered proteins and diverse biomolecular components. Finally, the recently emerging concept of biomolecular condensate, through liquid-liquid phase separation, was also reproduced by Martini3-IDP for a number of both homotypic and heterotypic systems. With the improved Martini3-IDP model, we expand the ability to simulate processes involving IDPs in complex environments, at spatio-temporal scales inaccessible with all-atom models.}",
+        "number": "{1}",
+        "journal": "{Nature Communications}",
+        "author": "{Wang, Liguo and Brasnett, Christopher and Borges-Araújo, Luís and Souza, Paulo C. T. and Marrink, Siewert J.}",
+        "month": "mar",
+        "year": "{2025}",
+        "pages": "{2874}"
+      }
+    },
+    {
+      "section": "Optional protein features",
+      "alias": "Elastic model",
+      "as_bib": "elastic.bib",
+      "as_ris": "elastic.ris",
+      "content": {
+        "title": "{Combining an {Elastic} {Network} {With} a {Coarse}-{Grained} {Molecular} {Force} {Field}: {Structure}, {Dynamics}, and {Intermolecular} {Recognition}}",
+        "volume": "{5}",
+        "issn": "{1549-9618}",
+        "url": "{https://doi.org/10.1021/ct9002114}",
+        "doi": "{10.1021/ct9002114}",
+        "number": "{9}",
+        "journal": "{Journal of Chemical Theory and Computation}",
+        "author": "{Periole, Xavier and Cavalli, Marco and Marrink, Siewert-Jan and Ceruso, Marco A.}",
+        "month": "sep",
+        "year": "{2009}",
+        "note": "{Publisher: American Chemical Society}",
+        "pages": "{2531--2543}",
+        "annote": "{doi: 10.1021/ct9002114}",
+        "type": "article"
+      }
+    },
+    {
+      "section": "Optional protein features",
+      "alias": "Side-chain correction",
+      "as_bib": "sc_fix.bib",
+      "as_ris": "sc_fix.ris",
+      "content": {
+        "title": "{Improved {Side} {Chain} {Dynamics} in {MARTINI} {Simulations} of {Protein}–{Lipid} {Interfaces}}",
+        "volume": "{12}",
+        "issn": "{1549-9618}",
+        "url": "{https://doi.org/10.1021/acs.jctc.6b00122}",
+        "doi": "{10.1021/acs.jctc.6b00122}",
+        "number": "{5}",
+        "journal": "{Journal of Chemical Theory and Computation}",
+        "author": "{Herzog, Florian A. and Braun, Lukas and Schoen, Ingmar and Vogel, Viola}",
+        "month": "may",
+        "year": "{2016}",
+        "note": "{Publisher: American Chemical Society}",
+        "pages": "{2446--2458}",
+        "annote": "{doi: 10.1021/acs.jctc.6b00122}",
+        "type": "article"
+      }
+    }
+  ]
+}

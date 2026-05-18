@@ -1,0 +1,26 @@
+TY  - JOUR
+TI  - Martinize2 and Vermouth provide a unified framework for molecular topology generation
+AU  - Kroon, Peter C
+AU  - Grünewald, Fabian
+AU  - Barnoud, Jonathan
+AU  - van Tilburg, Marco
+AU  - Brasnett, Chris
+AU  - Souza, Paulo CT
+AU  - Wassenaar, Tsjerk A
+AU  - Marrink, Siewert J
+A2  - Cui, Qiang
+VL  - 12
+PY  - 2025
+DA  - 2025/11/20
+SP  - RP90627
+C1  - eLife 2025;12:RP90627
+DO  - 10.7554/eLife.90627
+UR  - https://doi.org/10.7554/eLife.90627
+AB  - Ongoing advances in force field and computer hardware development enable the use of molecular dynamics (MD) to simulate increasingly complex systems with the ultimate goal of reaching cellular complexity. At the same time, rational design by high-throughput (HT) simulations is another forefront of MD. In these areas, the Martini coarse-grained force field, especially the latest version (i.e. v3), is being actively explored because it offers an enhanced spatial-temporal resolution. However, the automation tools for preparing simulations with the Martini force field, accompanying the previous version, were not designed for HT simulations or studies of complex cellular systems. Therefore, they become a major limiting factor. To address these shortcomings, we present the open-source Vermouth python library. Vermouth is designed to become the unified framework for developing programs, which prepare, run, and analyze Martini simulations of complex systems. To demonstrate the power of the Vermouth library, the Martinize2 program is showcased as a generalization of the martinize script, originally aimed to set up simulations of proteins. In contrast to the previous version, Martinize2 automatically handles protonation states in proteins and post-translation modifications, offers more options to fine-tune structural biases such as the elastic network (EN), and can convert non-protein molecules such as ligands. Finally, Martinize2 is used in two high-complexity benchmarks. The entire I-TASSER protein template database as well as a subset of 200,000 structures from the AlphaFold Protein Structure Database are converted to CG resolution and we illustrate how the checks on input structure quality can safeguard HT applications.
+KW  - Martini
+KW  - molecular dynamics
+KW  - coarse-graining
+JF  - eLife
+SN  - 2050-084X
+PB  - eLife Sciences Publications, Ltd
+ER  -

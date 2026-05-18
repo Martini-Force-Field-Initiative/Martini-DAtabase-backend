@@ -1,0 +1,65 @@
+{
+  "create_way": {
+    "hand": "Manually",
+    "martinize_1": "Martinize 1",
+    "martinize_2": "Vermouth-Martinize 2",
+    "auto_martini": "Auto-Martini"
+  },
+  "category_tree": {
+    "MC:0001": {
+      "name": "Sugars",
+      "dir" : "sugars",
+      "children": {}
+    },
+    "MC:0003": {
+      "name": "Polymers",
+      "dir" : "polymers",
+      "children": {}
+    },
+    "MC:0004": {
+      "name": "Amino acids",
+      "dir" : "aminoacids", 
+      "children": {}
+    },
+    "MC:0005": {
+      "name": "Lipids",
+      "dir" : "lipids",
+      "children": {}
+    }, 
+    "MC:0006": {
+      "name" : "Ions",
+      "dir" : "ions",
+      "children" : {}
+    }, 
+    "MC:0007" : {
+      "name" : "Phytochemicals",
+      "dir" : "phytochemicals",
+      "children" : {}
+    }, 
+    "MC:0008" : {
+      "name" : "Solvents", 
+      "dir" : "solvents",
+      "children" : {}
+    }, 
+    "MC:0010" : {
+      "name" : "Surfactants",
+      "dir" : "surfactants",
+      "children" : {}
+    },
+    "MC:0011" : {
+      "name" : "Synthetic nanoparticles",
+      "dir" : "Synthetic nanoparticles",
+      "children" : {}
+    },
+    "MC:0012" : {
+      "name" : "Small molecule",
+      "dir" : "small molecule",
+      "children" : {}
+    },
+    "MC:0013" : {
+      "name" : "Proteins",
+      "dir" : "proteins",
+      "children" : {}
+    }    
+  }
+}

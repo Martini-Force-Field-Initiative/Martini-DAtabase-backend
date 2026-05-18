@@ -1,0 +1,8 @@
+#include "martini_v3.0.0.itp"
+#include "POPC.itp"
+
+[ system ]
+POPC
+
+[ molecules ]
+POPC     1

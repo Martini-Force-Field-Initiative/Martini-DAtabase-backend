@@ -1,0 +1,18 @@
+TY  - JOUR
+TI  - Polarizable Water Model for the Coarse-Grained MARTINI Force Field
+AU  - Yesylevskyy, Semen O.
+AU  - Schäfer, Lars V.
+AU  - Sengupta, Durba
+AU  - Marrink, Siewert J.
+T2  - PLOS Computational Biology
+AB  - Author Summary Many biomolecular processes involve charged species moving between regions of high polarity, such as the water phase, and regions of lower polarity, such as the lipid membrane. Due to the change in electrostatic screening between these two environments, the strength of the interactions between the moving charge and the surrounding molecules also changes. This has important consequences for the way biological activity is controlled. To help understand the forces driving the movement of biomolecules, we developed a computational model which is capable of describing these processes at near-atomic detail. To do so efficiently, we use a coarse-grained description of the molecules, in which some of the atomistic detail is averaged out. To capture the inhomogeneous nature of the dielectric response, we re-introduce some detail in the water model; the new model effectively mimics the orientational polarizability of real water molecules, and screens electrostatic interactions realistically. This enables the study of a number of important biological processes that were hitherto considered challenging for coarse-grained models, such as the permeation of ions across a lipid membrane and the rupture of membranes due to an electrostatic field, at relatively low computational cost.
+DA  - 2010/06/10/
+PY  - 2010
+DO  - 10.1371/journal.pcbi.1000810
+VL  - 6
+IS  - 6
+SP  - e1000810
+J2  - PLOS Computational Biology
+UR  - https://doi.org/10.1371/journal.pcbi.1000810
+ER  - 
+

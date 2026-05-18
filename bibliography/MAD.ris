@@ -1,0 +1,46 @@
+TY  - INPR
+AU  - Marin, Romuald
+AU  - Hilpert, Cecile
+AU  - Grunewald, Fabian
+AU  - Valerio, Mariana
+AU  - Borges, Luis
+AU  - Janczarski, Stephane
+AU  - Rossini, Nicolas
+AU  - Marrink, Siewert-Jan
+AU  - Telles de Souza, Paulo
+AU  - Launay, Guillaume
+AD  - French Institute of Bioinformatics;; Microbiologie Moleculaire et
+      Biochimie Structurale (MMSB), UMR 5086 CNRS & University of Lyon, 7
+      passage du Vercors, 69367 Lyon, France;; Heidelberg Institute for
+      Theoretical Studies (HITS), Heidelberg, Germany;; Laboratoire de Biologie
+      et Modelisation de la Cellule, CNRS, UMR 5239, Inserm, U1293, Universite
+      Claude Bernard Lyon 1, Ecole Normale Superieure de Lyon, 46 allee
+      d'Italie, 69364, Lyon, France;; Laboratoire de Biologie et Modelisation de
+      la Cellule, CNRS, UMR 5239, Inserm, U1293, Universite Claude Bernard Lyon
+      1, Ecole Normale Superieure de Lyon,46 allee d'Italie, 69364, Lyon,
+      France;; Department of Microbiology, Biomedical Sciences Institute,
+      University of Sao Paulo, Sao Paulo, Brazil;; University of Groningen
+TI  - Extending the MAD toolbox: New polymer Builder and enhanced Martini
+      Database
+T2  - bioRxiv
+PY  - 2026
+DA  - 2026/1/26
+AB  - The MArtini Database (MAD) web server (www.mad.ens-lyon.fr) has been
+      updated with new tools, models, and capabilities to support a broader
+      range of molecular sys- tems for the Martini coarse grained (CG) force
+      field. The most notable addition is the MAD:Polymer Builder, enabling the
+      automated construction of CG polymer models with varying architectures and
+      complexities. The server now incorporates the latest developments in
+      Martini 3, providing enhanced control within the MAD:Molecule Builder over
+      the conversion of all-atom structures into CG representations, including
+      the implementation of GoMartini 3 for protein complexes and water protein
+      interaction biases. The MAD:Polymer Builder and MAD:Molecule Builder are
+      both adapted to work with intrinsically disordered proteins and domains.
+      Substantial progress has been made in expanding the MAD:Database, making a
+      growing library of Martini-ready compounds readily accessible across the
+      entire MAD ecosystem. These advances position MAD as a comprehensive and
+      evolving platform for the preparation of diverse systems in CG molecular
+      simulations.
+DO  - 10.64898/2026.01.23.700524
+UR  - http://dx.doi.org/10.64898/2026.01.23.700524
+ER  -
